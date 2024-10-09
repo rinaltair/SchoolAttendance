@@ -66,7 +66,7 @@ class PresensiMahasiswaController extends Controller
             }
 
             if (
-                //kalo bukan hari ini atau 
+                //kalo bukan hari ini atau
                 $pertemuan->tanggal != date('Y-m-d') ||
                 // lewat dari jam segini
                 date('H:i:s') >= $limit
@@ -94,11 +94,15 @@ class PresensiMahasiswaController extends Controller
     public function inputAbsensi(Request $request)
     {
         $now = new DateTime('now');
+
+        $materi = Pertemuan::select()->where('id', $request->pertemuan)->first()->presensi->first()->materi_id;
+
         foreach ($request->presensi as $person) {
             Presensi::updateOrInsert([
                 'pertemuan_id' => request('pertemuan'),
                 'user_id' => $person['mahasiswa'],
                 'level' => 'mahasiswa',
+                'materi_id' => $materi,
             ], [
                 'waktu_absen' => $now->format('Y-m-d H:i:s'),
                 'absensi_id' => $person['kehadiran'],

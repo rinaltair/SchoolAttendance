@@ -8,6 +8,14 @@
         <h4 class="text-blue h4">Tabel Pilih Presensi</h4>
     </div>
     <div class="pb-20">
+        @if (session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <table class="data-table table stripe hover nowrap">
             <thead>
                 <tr>

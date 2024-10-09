@@ -22,7 +22,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     @if(Auth::user()->role != 1)
-                    <a class="dropdown-item" href="/profile/"><i class="dw dw-user1"></i> Profil</a>
+{{--                    <a class="dropdown-item" href="/profile/"><i class="dw dw-user1"></i> Profil</a>--}}
                     @endif
                     {{-- <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a> --}}
                     {{-- <a class="dropdown-item" href="#"><i class="dw dw-help"></i> Help</a> --}}

@@ -9,7 +9,7 @@
             <h4 class="text-blue h4 mr-5">Tabel Gaji</h4>
             <div class="">
                 @if($data != null)
-                <a href="{{route('admin.gaji.pdf', ['user' => $user->id, 'bulan' =>  $input['bulan'], 'tahun' =>  $input['tahun']] )}}" class="btn btn-sm btn-outline-info">PDF</a>
+{{--                <a href="{{route('admin.gaji.pdf', ['user' => $user->id, 'bulan' =>  $input['bulan'], 'tahun' =>  $input['tahun']] )}}" class="btn btn-sm btn-outline-info">PDF</a>--}}
                 <a href="{{route('admin.gaji.excel', ['user' => $user->id, 'bulan' =>  $input['bulan'], 'tahun' =>  $input['tahun']] )}}" class="btn btn-sm btn-outline-primary">Excel</a>
                 @endif
             </div>

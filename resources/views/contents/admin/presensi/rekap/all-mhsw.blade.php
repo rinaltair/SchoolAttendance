@@ -8,7 +8,7 @@
         <div class=" d-flex">
             <h4 class="text-blue h4 mr-5">Tabel Presensi</h4>
 
-            <a href="{{route('admin.presensi.rekap.mahasiswa.pdf', ['mapel' => $mapel->id ] )}}" class="btn btn-sm btn-outline-info">PDF</a>
+{{--            <a href="{{route('admin.presensi.rekap.mahasiswa.pdf', ['mapel' => $mapel->id ] )}}" class="btn btn-sm btn-outline-info">PDF</a>--}}
             <a href="{{route('admin.presensi.rekap.mahasiswa.excel', ['mapel' => $mapel->id ] )}}" class="btn btn-sm btn-outline-primary">Excel</a>
         </div>
         <p>Mapel: {{ $mapel->nama }} | Kelas: {{ $mapel->kelas->nama }}</p>

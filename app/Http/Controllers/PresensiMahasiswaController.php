@@ -43,7 +43,8 @@ class PresensiMahasiswaController extends Controller
     //manmpilkan absensi pada pertemuan tsb
     public function showPresensi(Mapel $mapel, Pertemuan $pertemuan)
     {
-        $presensi_dosen = Presensi::select()->where('pertemuan_id', $pertemuan->id)->where('level', 'dosen')->first();
+        $presensi_dosen = Presensi::select()->where('pertemuan_id', $pertemuan->id)->whereIn('level', ['dosen', 'asdos'])->first();
+
         if ($presensi_dosen) {
 
             //kalo absen masuk
@@ -86,7 +87,7 @@ class PresensiMahasiswaController extends Controller
                 'absensis' => Absensi::all()
             ]);
         } else {
-            return back()->with('error', 'Absen belum dibuka, Pastikan dosen telah absen!');
+            return back()->with('error', 'Absen belum dibuka, Pastikan dosen / asisten dosen telah absen!');
         }
     }
 
